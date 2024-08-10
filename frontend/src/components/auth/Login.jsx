@@ -11,7 +11,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import { Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoading } from "@/redux/authSlice";
+import { setAuthUser, setLoading } from "@/redux/authSlice";
 import { Loader2 } from "lucide-react";
 
 
@@ -41,6 +41,7 @@ const Login = () => {
         withCredentials:false,
       } );
       if(res.data.success){
+        dispatch(setAuthUser(res.data.user));
         navigate("/");
         toast.success(res.data.message);
       }
