@@ -2,11 +2,14 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar from './components/shared/Navbar'
+import Navbar from './components/shared/Navbar.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './components/auth/Login.jsx'
 import SignUp from './components/auth/SignUp.jsx'
 import Home from './components/Home'
+import Jobs from './components/Jobs'
+import Browse from './components/Browse'
+
 
 const appRouter=createBrowserRouter([
   {
@@ -22,12 +25,12 @@ const appRouter=createBrowserRouter([
     element:<SignUp/>
   },
   {
-    path: '/',
-    element:<Home/>
+    path: '/jobs',
+    element:<Jobs />
   },
   {
-    path: '/',
-    element:<Home/>
+    path:"/browse",
+    element:<Browse />
   }
 ])
 
