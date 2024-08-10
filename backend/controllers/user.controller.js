@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken"
 export const register=async(req,res)=>{
     try{
         const {fullName,email,phoneNumber,password,role}=req.body;
+        console.log(fullName,email,phoneNumber,password,role);
         if(!fullName || !email || !phoneNumber || !password || !role){
             return res.status(400).json({
                 message:'Something is missing',
@@ -39,6 +40,7 @@ export const register=async(req,res)=>{
 export const login=async (req,res)=>{
     try{
         const {email,password,role}=req.body;
+        console.log(email,password,role);
         if(!email || !password || !role){
             return res.status(400).json({
                 message:'Something is missing',

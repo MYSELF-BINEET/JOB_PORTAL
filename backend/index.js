@@ -20,10 +20,10 @@ app.use(cookieParser());
 
 const corsOptions={
     origin:"http://localhost:3000",
-    Credential:true
+    Credential:false
 }
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 
 const port=process.env.PORT ||3000;
