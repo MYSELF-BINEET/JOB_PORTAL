@@ -38,7 +38,7 @@ const Login = () => {
       dispatch(setLoading(true));
       const res= await axios.post(`${USER_API_END_POINT}/login`, input,{
         headers: {'Content-Type': 'application/json'},
-        withCredentials:false,
+        withCredentials:true,
       } );
       if(res.data.success){
         dispatch(setAuthUser(res.data.user));
@@ -79,7 +79,7 @@ const Login = () => {
               value={input.password}
               name="password"
               onChange={changeEventHandler}
-              placeholder="........."
+              placeholder="Enter your password"
             />
           </div>
           <div className="flex items-center justify-between">

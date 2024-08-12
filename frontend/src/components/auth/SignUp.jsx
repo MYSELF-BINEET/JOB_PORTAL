@@ -51,7 +51,7 @@ const Signup = () => {
       dispatch(setLoading(true));
       const res= await axios.post(`${USER_API_END_POINT}/register`, formData,{
         headers: {'Content-Type': 'multipart/form-data'},
-        withCredentials:false,
+        withCredentials:true,
       } );
       if(res.data.success){
         navigate("/login");
@@ -108,7 +108,7 @@ const Signup = () => {
             <Label>Password</Label>
             <Input
               type="password"
-              placeholder="........"
+              placeholder="Enter your password"
               value={input.password}
               name="password"
               onChange={changeEventHandler}
