@@ -44,6 +44,7 @@ const CompanySetup = () => {
         if (input.file) {
             formData.append("file", input.file);
         }
+        console.log(formData);
         try {
             setLoading(true);
             const res = await axios.put(`${COMPANY_API_END_POINT}/update/${params.id}`, formData, {
@@ -56,6 +57,7 @@ const CompanySetup = () => {
                 toast.success(res.data.message);
                 navigate("/admin/companies");
             }
+            // console.log(res);
         } catch (error) {
             console.log(error);
             toast.error(error.response.data.message);
@@ -80,7 +82,7 @@ const CompanySetup = () => {
             <div className='max-w-xl mx-auto my-10'>
                 <form onSubmit={submitHandler}>
                     <div className='flex items-center gap-5 p-8'>
-                        <Button onClick={() => navigate("/admin/companies")} variant="outline" className="flex items-center gap-2 text-gray-500 font-semibold">
+                        <Button onClick={() => navigate("/admin/companies")} variant="outline" className="flex items-center  text-gray-500 font-semibold">
                             <ArrowLeft />
                             <span>Back</span>
                         </Button>

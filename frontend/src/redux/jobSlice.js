@@ -29,7 +29,10 @@ const jobSlice = createSlice({
         },
         setSearchedQuery:(state,action) => {
             state.searchedQuery = action.payload;
-        }
+        },
+        // setSingleJob:(state,action)=>{
+        //     state.singleJob = action.payload;
+        // }
     }
 });
 export const {
