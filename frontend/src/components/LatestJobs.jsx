@@ -1,10 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import LatestJobCards from './LatestJobCards';
+import { useNavigate } from 'react-router-dom';
 
 const LatestJobs = () => {
 
     const {allJobs} =useSelector(store=>store.job);
+    const navigate=useNavigate();
 
   return (
 
