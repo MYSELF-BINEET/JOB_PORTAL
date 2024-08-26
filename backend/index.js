@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 
 const corsOptions = {
-    origin:'http://localhost:5173',
+    origin:'https://66cc2b960c815ff3a2879a9f--jobshunter.netlify.app',
     credentials:true
 }
 
